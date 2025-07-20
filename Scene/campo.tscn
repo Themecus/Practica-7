@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfnj6mraqg62y"]
+
+[ext_resource type="PackedScene" uid="uid://dc7fx0jcryrxg" path="res://Scene/player.tscn" id="1_jt4q6"]
+[ext_resource type="PackedScene" uid="uid://dv4ppbp0y4tmd" path="res://Scene/pared.tscn" id="2_agmye"]
+[ext_resource type="PackedScene" uid="uid://b4lm86nn810wr" path="res://Scene/enemigo_perseguidor.tscn" id="3_ubyte"]
+
+[node name="Campo" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+color = Color(0, 0.317133, 0.319053, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_jt4q6")]
+position = Vector2(392, 266)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 324)
+
+[node name="paredes" type="Node2D" parent="."]
+
+[node name="Pared" parent="paredes" instance=ExtResource("2_agmye")]
+position = Vector2(1171, 299)
+scale = Vector2(1, 1.64)
+
+[node name="Pared2" parent="paredes" instance=ExtResource("2_agmye")]
+position = Vector2(-24, 326)
+scale = Vector2(1, 2.6896)
+
+[node name="Pared3" parent="paredes" instance=ExtResource("2_agmye")]
+position = Vector2(565, -17)
+rotation = -1.57075
+scale = Vector2(1, 2.6896)
+
+[node name="Pared4" parent="paredes" instance=ExtResource("2_agmye")]
+position = Vector2(579, 672)
+rotation = -1.57075
+scale = Vector2(1, 2.6896)
+
+[node name="enemigoPerseguidor" parent="." instance=ExtResource("3_ubyte")]
+position = Vector2(822, 346)
