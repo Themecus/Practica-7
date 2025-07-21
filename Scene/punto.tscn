@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://wpptfaq1y0fu"]
+
+[ext_resource type="Script" path="res://Scripts/punto.gd" id="1_vgx80"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rr5xo"]
+radius = 35.2278
+
+[node name="Punto" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_vgx80")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -48.261
+offset_top = -45.261
+offset_right = 49.739
+offset_bottom = 49.739
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.19055, 2.3811)
+shape = SubResource("CircleShape2D_rr5xo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

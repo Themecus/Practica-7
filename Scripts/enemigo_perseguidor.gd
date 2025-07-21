@@ -1,6 +1,5 @@
 extends CharacterBody2D
-#quitamos la colision del personaje y solo dejamos la del area2d para probar cuando se queda quieto
-var speed = 100
+var speed = 150
 var movimiento=true
 var player = null
 var tiempo= 2
@@ -20,13 +19,17 @@ func follow():
 	else:
 		velocity=Vector2.ZERO #en caso que lo toque se detiene el enemigo
 	move_and_slide()
+	
+func _on_area_2d_body_entered(body):
+	print("atrapado")
+	#movimiento=false
 
-func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	print("entro")
+func _on_area_2d_body_exited(body):
+	print("escapa")
+	#movimiento=true
+
+
+func _on_area_2d_area_entered(area):
 	movimiento=false
-
-
-func _on_area_2d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	print("salio")
-	movimiento=true
-
+	set_collision_mask_value(1, false)
+	set_collision_mask_value(1, false)

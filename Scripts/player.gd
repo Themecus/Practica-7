@@ -24,8 +24,10 @@ func _physics_process(delta):
 		tiempo-=delta
 		if tiempo<=0.0:
 			print("libre")
-			SPEED=300
 			habilidad=true
+		if tiempo<=4.5:
+			print("libre")
+			SPEED=300
 	#esto se encargara de moverse con la direccion que le demos mas la velocidad planteada
 	velocity=direction*SPEED
 	move_and_slide()
@@ -33,7 +35,13 @@ func _physics_process(delta):
 func Turbo():
 	#Nos da mas velocidad pero apagara la habilidad
 	SPEED=600
-	tiempo=2.0
+	tiempo=6.0
 	habilidad=false
 	print("bloqueado, tiempo tiene="+ str(tiempo))
 
+
+
+func _on_area_2d_body_entered(body):
+	queue_free()
+	get_tree().change_scene_to_file("res://Scene/fin.tscn")
+	

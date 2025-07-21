@@ -1,0 +1,1 @@
+Los layers es el grupo de objetos y los Marks que detectara, ósea, si el personaje estaba en el Layers 1, el enemigo en el layer 2, ponemos que el enemigos el Mask 1
