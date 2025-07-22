@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var speed = 150
+var speed = 50
 var movimiento=true
 var player = null
 var tiempo= 2
@@ -33,5 +33,5 @@ func _on_area_2d_area_entered(area):
 	movimiento=false
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(1, false)
-	Campo.actualizar(1)
-	
+	Campo.actualizar(2)
+

@@ -1,6 +1,7 @@
 extends CharacterBody2D
-var speed = 150
-var movimiento=true
+var speed = 100
+var movimiento=false
+var movimiento1=true
 var player = null
 var tiempo= 2
 
@@ -20,18 +21,14 @@ func follow():
 		velocity=Vector2.ZERO #en caso que lo toque se detiene el enemigo
 	move_and_slide()
 	
-func _on_area_2d_body_entered(body):
-	print("atrapado")
-	#movimiento=false
-
-func _on_area_2d_body_exited(body):
-	print("escapa")
-	#movimiento=true
-
-
 func _on_area_2d_area_entered(area):
 	movimiento=false
 	set_collision_mask_value(1, false)
 	set_collision_mask_value(1, false)
-	Campo.actualizar(1)
-	
+	Campo.actualizar(3)
+
+func _on_area_2d_2_body_entered(body):
+	if movimiento1:
+		movimiento=true
+		movimiento1=false
+		

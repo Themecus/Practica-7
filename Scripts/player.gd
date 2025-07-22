@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var SPEED = 300.0
+var SPEED = 310.0
 var habilidad=true
 var tiempo=0.0
 

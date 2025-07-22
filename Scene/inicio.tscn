@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://crpxfwvcm1eqo"]
+[gd_scene load_steps=3 format=3 uid="uid://dqkeg6ncvuhpn"]
 
-[ext_resource type="Script" path="res://Scripts/fin.gd" id="1_obag6"]
+[ext_resource type="Script" path="res://Scripts/inicio.gd" id="1_pgqsw"]
+[ext_resource type="PackedScene" uid="uid://dc7fx0jcryrxg" path="res://Scene/player.tscn" id="2_ualp3"]
 
-[node name="Fin" type="Control"]
+[node name="Inicio" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_obag6")
+script = ExtResource("1_pgqsw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -19,33 +20,30 @@ color = Color(0, 0.288531, 0.288531, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 443.0
-offset_top = 197.0
-offset_right = 765.0
-offset_bottom = 517.0
+offset_left = 342.0
+offset_top = 200.0
+offset_right = 837.0
+offset_bottom = 560.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "PERDISTES!
+text = "ATRAPA LAS VACAS!
 "
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Puntuacion: 0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "REINICIAR"
+text = "COMENZAR"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "SALIR"
+
+[node name="Player" parent="." instance=ExtResource("2_ualp3")]
+position = Vector2(-133, 7)
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

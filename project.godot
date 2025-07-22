@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Practica 7"
-run/main_scene="res://Scene/campo.tscn"
+run/main_scene="res://Scene/inicio.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
 EnemigoPerseguidor="*res://Scripts/enemigo_perseguidor.gd"
+Campo="*res://Scripts/campo.gd"
 
 [input]
 
